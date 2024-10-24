@@ -1,0 +1,23 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pixelwise-react-app
+    ports:
+      # Mapeo de puertos, expone el puerto 80 de Apache
+      - "${PORT}:80"
+    volumes:
+      # Monta el código fuente en el directorio de trabajo
+      - ./app:/app
+    environment:
+      # Variables de entorno opcionales
+      - APACHE_RUN_USER=${APACHE_RUN_USER}
+      - APACHE_RUN_GROUP=${APACHE_RUN_GROUP}
+      - NODE_ENV=${NODE_ENV}
+    networks:
+      - pixelwise-network
+
+networks:
+  pixelwise-network:
+    driver: bridge
