@@ -15,6 +15,10 @@ export default tseslint.config(
       'plugin:react-hooks/recommended', // Añadir recomendación de React Hooks
       'plugin:react-refresh/recommended', // Añadir recomendación de React Refresh
       'prettier', // Añadir Prettier
+      'plugin:react/recommended',
+      'plugin:@typescript-eslint/recommended',
+      'prettier',
+      'plugin:prettier/recommended',
     ],
     files: ['**/*.{ts,tsx,js,jsx}'], // Asegúrate de incluir archivos JS y JSX
     languageOptions: {
@@ -37,6 +41,13 @@ export default tseslint.config(
       'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
       'react/jsx-props-no-spreading': 'off',
       'prettier/prettier': 'error', // Muestra errores de Prettier
+      'prettier/prettier': [
+        'error',
+        {
+          endOfLine: 'auto',
+        },
+        { usePrettierrc: true },
+      ],
     },
   },
 )
