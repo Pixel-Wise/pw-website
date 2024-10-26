@@ -1,12 +1,16 @@
-import { Header } from './partials/Header'
-import { Footer } from './partials/Footer'
+import { Outlet } from 'react-router-dom';
 
-export const WebsiteLayout = ({ children }: { children: React.ReactNode }) => {
+import { Header } from './partials/Header';
+import { Footer } from './partials/Footer';
+
+export const WebsiteLayout = () => {
   return (
     <>
       <Header />
-      <main className="grow">{children}</main>
+      <main className="grow">
+        <Outlet />
+      </main>
       <Footer />
     </>
-  )
-}
+  );
+};
