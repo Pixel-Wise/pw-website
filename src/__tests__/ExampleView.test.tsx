@@ -1,3 +1,3 @@
 describe('Demo', () => {
-  test('test', () => {})
-})
+  test('test', () => {});
+});

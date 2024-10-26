@@ -1,8 +1,8 @@
-import { Example } from '../../domain/example/Example'
+import { Example } from '../../domain/example/Example';
 
 export async function fetchExamples(): Promise<Example[]> {
-  const response = await fetch('/api/examples')
-  return response.json()
+  const response = await fetch('/api/examples');
+  return response.json();
 }
 
 export async function postExample(name: string): Promise<Example> {
@@ -10,6 +10,6 @@ export async function postExample(name: string): Promise<Example> {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name }),
-  })
-  return response.json()
+  });
+  return response.json();
 }
