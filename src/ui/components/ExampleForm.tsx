@@ -10,7 +10,7 @@ const ExampleForm: React.FC = () => {
     addExample(name);
     setName('');
   };
-  const ExampleForm = 'ExampleForm';
+  // const ExampleForm = 'ExampleForm';
 
   return (
     <form onSubmit={handleSubmit} className="example-form">

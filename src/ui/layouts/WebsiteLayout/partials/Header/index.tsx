@@ -1,6 +1,9 @@
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export const Header = ({ nav = true }: { nav?: boolean }) => {
+  const { t } = useTranslation();
+
   return (
     <>
       <header className="absolute w-full z-30">
@@ -77,14 +80,14 @@ export const Header = ({ nav = true }: { nav?: boolean }) => {
                     <NavLink
                       className="font-medium text-gray-400 hover:text-blue-500 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
                       to="/signin">
-                      Sign in
+                      {t('header.signIn')}
                     </NavLink>
                   </li>
                   <li className="ml-3">
                     <NavLink
                       className="btn-sm text-white bg-gradient-to-t from-blue-600 to-blue-400 hover:to-blue-500 w-full shadow-lg group"
                       to="#0">
-                      Get Started{' '}
+                      {t('header.start')}{' '}
                       <span className="tracking-normal text-blue-200 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
                         -&gt;
                       </span>
