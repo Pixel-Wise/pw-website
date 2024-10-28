@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { WebsiteLayout } from './../ui/layouts/WebsiteLayout';
-import { Home } from './../ui/views/ExampleView';
+import { Home } from './../ui/views/Home';
 
 const AppRoutes: React.FC = () => {
   return (
