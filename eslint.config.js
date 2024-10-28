@@ -3,51 +3,77 @@ import globals from 'globals';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
+import unusedImports from 'eslint-plugin-unused-imports';
 import prettier from 'eslint-plugin-prettier';
 
-export default tseslint.config(
-  { ignores: ['dist'] },
+// Configuración de ESLint
+const reactPlugins = {
+  'react-hooks': reactHooks,
+  'react-refresh': reactRefresh,
+};
+
+const typescriptPlugins = {
+  '@typescript-eslint': tseslint,
+};
+
+// Exportar la configuración
+export default [
+  // Ignorar directorios
   {
-    extends: [
-      js.configs.recommended,
-      ...tseslint.configs.recommended,
-      'plugin:react/recommended', // Añadir recomendación de React
-      'plugin:react-hooks/recommended', // Añadir recomendación de React Hooks
-      'plugin:react-refresh/recommended', // Añadir recomendación de React Refresh
-      'prettier', // Añadir Prettier
-      'plugin:react/recommended',
-      'plugin:@typescript-eslint/recommended',
-      'prettier',
-      'plugin:prettier/recommended',
-    ],
-    files: ['**/*.{ts,tsx,js,jsx}'], // Asegúrate de incluir archivos JS y JSX
+    ignores: ['dist'],
+  },
+  // Configuración para TypeScript
+  {
+    files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
-      parser: '@typescript-eslint/parser',
+      parser: tsParser,
       sourceType: 'module',
+      globals: globals.browser,
     },
     plugins: {
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
-      prettier,
+      ...reactPlugins,
+      ...typescriptPlugins,
+      'unused-imports': unusedImports,
+      prettier: prettier, // Agregar el plugin de Prettier aquí
     },
     rules: {
-      ...reactHooks.configs.recommended.rules,
+      'prettier/prettier': 'error', // Usar la regla de Prettier correctamente
+      'react/react-in-jsx-scope': 'off',
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
       ],
-      'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
-      'react/jsx-props-no-spreading': 'off',
-      'prettier/prettier': 'error', // Muestra errores de Prettier
-      'prettier/prettier': [
+      '@typescript-eslint/no-unused-vars': [
         'error',
-        {
-          endOfLine: 'auto',
-        },
-        { usePrettierrc: true },
+        { argsIgnorePattern: '^_' },
+      ],
+      'unused-imports/no-unused-imports': 'error',
+      'no-unused-vars': 'off',
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
+  },
+  // Extensiones de configuración para ESLint y TypeScript
+  js.configs.recommended,
+  {
+    rules: {
+      'react/react-in-jsx-scope': 'off',
+    },
+  },
+  {
+    plugins: {
+      '@typescript-eslint': tseslint,
+    },
+    rules: {
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_' },
       ],
     },
   },
-);
+];

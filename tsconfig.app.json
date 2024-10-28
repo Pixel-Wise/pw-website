@@ -21,9 +21,15 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["*"]
+      "@domain/*": ["src/domain/*"],
+      "@infrastructure/*": ["src/infrastructure/*"],
+      "@ui/*": ["src/ui/*"],
+      "@assets/*": ["src/ui/assets/*"],
+      "@components/*": ["src/ui/components/*"],
+      "@views/*": ["src/ui/views/*"],
+      "@usecases/*": ["src/usecases/*"]
     }
   },
   "include": ["src"],

@@ -1,18 +1,28 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react-swc';
+import react from '@vitejs/plugin-react';
+import eslintPlugin from 'vite-plugin-eslint';
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    eslintPlugin({
+      failOnWarning: false,
+      failOnError: true,
+    }),
+  ],
   resolve: {
     alias: {
-      '@': '/src',
-    },
-  },
-  server: {
-    open: true,
-    hmr: {
-      overlay: true, // Enable error overlay in browser
+      '@': path.resolve(__dirname, 'src'),
+      '@domain': path.resolve(__dirname, 'src/domain'),
+      '@infrastructure': path.resolve(__dirname, 'src/infrastructure'),
+      '@ui': path.resolve(__dirname, 'src/ui'),
+      '@assets': path.resolve(__dirname, 'src/ui/assets'),
+      '@components': path.resolve(__dirname, 'src/ui/components'),
+      '@views': path.resolve(__dirname, 'src/ui/views'),
+      '@usecases': path.resolve(__dirname, 'src/usecases'),
     },
   },
 });
