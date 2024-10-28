@@ -32,7 +32,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    forms,
-  ],
+  plugins: [forms],
 };
