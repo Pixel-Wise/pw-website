@@ -1,8 +1,10 @@
 /* src/ui/views/ExampleView.css */
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%; /* Asegurarse de que el contenedor raíz abarque el 100% de la altura */
-  margin: 0;    /* Eliminar cualquier margen predeterminado */
+  margin: 0; /* Eliminar cualquier margen predeterminado */
   padding: 0;
 }
 

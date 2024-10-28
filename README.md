@@ -54,6 +54,8 @@ Cada vez que hagas un commit, **Commitlint** validará el mensaje. Si no cumple 
    ```bash
    yarn commit
 
+   ```
+
 3. Sigue las instrucciones en pantalla para seleccionar el tipo de cambio, el ámbito (opcional) y escribir el asunto y la descripción del commit.
 
 ## Integración con Vercel
@@ -64,7 +66,7 @@ Cómo Configurar Vercel
     1. Conectar el Repositorio: Asegúrate de que tu repositorio esté conectado a Vercel.
     2. Despliegue Automático: Cada vez que se crea una nueva rama o se realiza un pull request, Vercel desplegará automáticamente la aplicación en un entorno aislado.
     3. Verificación de Cambios: Los desarrolladores pueden ver y probar los cambios en el entorno efímero proporcionado por Vercel.
-    4. Hacer git push 
+    4. Hacer git push
 
 Despliegue Manual (si es necesario)
 
@@ -78,6 +80,7 @@ Docker permite contenerizar la aplicación, facilitando el desarrollo, pruebas y
 Dockerfile
 
 Asegúrate de tener un Dockerfile configurado en la raíz de tu proyecto. Un ejemplo de un Dockerfile para tu proyecto puede verse así:
+
 ```bash
 # Usar la imagen oficial de Node.js como base
 FROM node:16
@@ -103,6 +106,7 @@ EXPOSE 3000
 #Comando para ejecutar la aplicación
 CMD ["yarn", "start"]
 ```
+
 Construir la Imagen de Docker
 
 Para construir la imagen de Docker, ejecuta el siguiente comando en la raíz de tu proyecto:
@@ -122,7 +126,6 @@ Accede a la aplicación en tu navegador en http://localhost:3000.
 ¡Apreciamos tus contribuciones! Asegúrate de seguir las normas de commit mencionadas anteriormente y crea pull requests para cualquier cambio que desees proponer.
 
 ¡Gracias por colaborar en el proyecto PixelWise! Si tienes preguntas, no dudes en comunicarte con el equipo.
-
 
 ### Consideraciones Finales
 
