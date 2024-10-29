@@ -1,16 +1,18 @@
 import { NavLink } from 'react-router-dom';
 
 export const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 border-t border-slate-800">
         {/* Blocks */}
-        <div className="grid sm:grid-cols-12 gap-8 py-8 md:py-12">
+        <div className="grid sm:grid-cols-12 gap-8 py-8 md:py-12 mb-0">
           {/* 1st block */}
           <div className="sm:col-span-12 lg:col-span-4 lg:max-w-xs">
             <div className="mb-2">
               {/* Logo */}
-              <NavLink className="inline-flex" to="/" aria-label="Cruip">
+              <NavLink className="inline-flex" to="/" aria-label="PixelWise">
                 <svg className="w-8 h-8" viewBox="0 0 32 32">
                   <defs>
                     <radialGradient
@@ -68,52 +70,25 @@ export const Footer = () => {
                 </svg>
               </NavLink>
             </div>
-            <div className="text-sm text-gray-600">
-              <a
-                className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
-                href="#0">
-                Terms
-              </a>{' '}
-              ·{' '}
-              <a
-                className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
-                href="#0">
-                Privacy Policy
-              </a>
-            </div>
           </div>
           {/* 2nd block */}
           <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
             <h6 className="text-xs text-gray-200 font-semibold uppercase mb-2">
-              Products
+              E-mails
             </h6>
             <ul className="text-sm space-y-2">
               <li>
                 <a
                   className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
                   href="#0">
-                  Neon Manage
+                  contacto@pixelwise.com.mx
                 </a>
               </li>
               <li>
                 <a
                   className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
                   href="#0">
-                  Neon Analyse
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
-                  href="#0">
-                  Neon Launch
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
-                  href="#0">
-                  Experimentation
+                  sales@pixelwise.com.mx
                 </a>
               </li>
             </ul>
@@ -121,35 +96,14 @@ export const Footer = () => {
           {/* 3rd block */}
           <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
             <h6 className="text-xs text-gray-200 font-semibold uppercase mb-2">
-              Resources
+              Phones
             </h6>
             <ul className="text-sm space-y-2">
               <li>
                 <a
                   className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
                   href="#0">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
-                  href="#0">
-                  Cheat Sheet
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
-                  href="#0">
-                  Channel Partners
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
-                  href="#0">
-                  Affiliate Program
+                  55 5606 1840
                 </a>
               </li>
             </ul>
@@ -157,67 +111,31 @@ export const Footer = () => {
           {/* 4th block */}
           <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
             <h6 className="text-xs text-gray-200 font-semibold uppercase mb-2">
-              Compare
+              Legals
             </h6>
             <ul className="text-sm space-y-2">
               <li>
                 <a
                   className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
                   href="#0">
-                  Session Recording
+                  Terms
                 </a>
               </li>
               <li>
                 <a
                   className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
                   href="#0">
-                  Feature Flags
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
-                  href="#0">
-                  Heatmaps
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
-                  href="#0">
-                  Correlation Analysis
+                  Privacy Policy
                 </a>
               </li>
             </ul>
           </div>
-          {/* 5th block */}
-          <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h6 className="text-xs text-gray-200 font-semibold uppercase mb-2">
-              Company
-            </h6>
-            <ul className="text-sm space-y-2">
-              <li>
-                <a
-                  className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
-                  href="#0">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
-                  href="#0">
-                  Our Story
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
-                  href="#0">
-                  Work With Us
-                </a>
-              </li>
-            </ul>
+        </div>
+        <div className="w-full text-center py-1">
+          <div className="text-sm text-gray-600">
+            <span className="text-gray-400">
+              Hecho con ❤️ por PixelWise © {currentYear}
+            </span>
           </div>
         </div>
       </div>
