@@ -24,6 +24,6 @@ jobs:
       - name: Deploy to Vercel
         uses: vercel/vercel-action@v2
         with:
-          token: ${{ secrets.VERCEL_TOKEN }}
+          token: '${{ secrets.VERCEL_TOKEN }}'
           org-id: PixelWise
           project-name: pw-website
