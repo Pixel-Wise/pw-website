@@ -11,4 +11,26 @@ export default {
       seeMore: 'Lorem ipsum',
     },
   },
+  aboutUs: {
+    title: 'Acerca de PixelWise',
+    description:
+      'Loem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    corporateIdentity: {
+      mission: {
+        title: 'Misión',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      },
+      vision: {
+        title: 'Visión',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      },
+      values: {
+        title: 'Valores',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      },
+    },
+  },
 };
