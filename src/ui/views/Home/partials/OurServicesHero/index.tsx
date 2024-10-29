@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import Illustration from '@assets/images/hero-illustration.svg';
 
-export const OurServices = () => {
+export const OurServicesHero = () => {
   const { t } = useTranslation();
 
   return (
