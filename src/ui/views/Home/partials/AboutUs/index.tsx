@@ -5,7 +5,7 @@ export const AboutUs = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
       <div
         className="absolute top-0 left-0 right-0 bg-gradient-to-b from-gray-800 to-gray-900 opacity-60 h-[10rem] pointer-events-none -z-10"
         aria-hidden="true"
