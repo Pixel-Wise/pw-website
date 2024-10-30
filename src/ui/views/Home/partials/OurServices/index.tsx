@@ -1,59 +1,127 @@
-import { useTranslation } from 'react-i18next';
-import Illustration from '@assets/images/hero-illustration.svg';
+import CustomerImg01 from '@assets/images/pricing-illustration.svg';
+import CustomerBg01 from '@assets/images/pricing-illustration.svg';
+import CustomerImg02 from '@assets/images/pricing-illustration.svg';
+import CustomerBg02 from '@assets/images/pricing-illustration.svg';
+import CustomerImg03 from '@assets/images/pricing-illustration.svg';
+import CustomerBg03 from '@assets/images/pricing-illustration.svg';
+import CustomerImg04 from '@assets/images/pricing-illustration.svg';
+import CustomerBg04 from '@assets/images/pricing-illustration.svg';
+import CustomerImg05 from '@assets/images/pricing-illustration.svg';
+import CustomerBg05 from '@assets/images/pricing-illustration.svg';
+import CustomerImg06 from '@assets/images/pricing-illustration.svg';
+import CustomerBg06 from '@assets/images/pricing-illustration.svg';
+import CustomerImg07 from '@assets/images/pricing-illustration.svg';
+import CustomerBg07 from '@assets/images/pricing-illustration.svg';
+import CustomerImg08 from '@assets/images/pricing-illustration.svg';
+import CustomerBg08 from '@assets/images/pricing-illustration.svg';
+import Highlighter, { HighlighterItem02 } from '@ui/components/highlighter';
 
 export const OurServices = () => {
-  const { t } = useTranslation();
+  const items = [
+    {
+      name: 'Service 1',
+      img: CustomerImg01,
+      bg: CustomerBg01,
+      link: '/customers/single-post',
+    },
+    {
+      name: 'Service 2',
+      img: CustomerImg02,
+      bg: CustomerBg02,
+      link: '/customers/single-post',
+    },
+    {
+      name: 'Service 3',
+      img: CustomerImg03,
+      bg: CustomerBg03,
+      link: '/customers/single-post',
+    },
+    {
+      name: 'Service 4',
+      img: CustomerImg04,
+      bg: CustomerBg04,
+      link: '/customers/single-post',
+    },
+    {
+      name: 'Service 5',
+      img: CustomerImg05,
+      bg: CustomerBg05,
+      link: '/customers/single-post',
+    },
+    {
+      name: 'Service 6',
+      img: CustomerImg06,
+      bg: CustomerBg06,
+      link: '/customers/single-post',
+    },
+    {
+      name: 'Service 7',
+      img: CustomerImg07,
+      bg: CustomerBg07,
+      link: '/customers/single-post',
+    },
+    {
+      name: 'Service 8',
+      img: CustomerImg08,
+      bg: CustomerBg08,
+      link: '/customers/single-post',
+    },
+  ];
 
   return (
-    <section className="relative overflow-hidden">
-      <div
-        className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-800 to-gray-900 opacity-60 h-[10rem] pointer-events-none -z-10"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute left-1/2 -translate-x-1/2 pointer-events-none -z-10"
-        aria-hidden="true">
-        <img src={Illustration} className="max-w-none" alt="PixelWise hero" />
-      </div>
-
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pt-32 pb-12 md:pt-40 md:pb-20">
-          {/* Hero content */}
-          <div className="max-w-xl mx-auto md:max-w-[640px] md:mx-0 text-center md:text-left">
-            <div data-aos="zoom-out">
-              <div className="relative text-sm text-gray-300 bg-gray-800 rounded-full inline-block px-4 py-1 mb-6 before:content-[''] before:absolute before:-z-10 before:inset-0 before:-m-0.5 before:bg-gradient-to-t before:from-gray-800 before:to-gray-800 before:via-gray-600 before:rounded-full">
-                <div className="text-gray-400">
-                  {t('home.ourServices.subtitle')}
-                </div>
-              </div>
-            </div>
-            <h1
-              className="h1 font-uncut-sans mb-6"
-              data-aos="zoom-out"
-              data-aos-delay="100">
-              {t('home.ourServices.title')}
-            </h1>
-            <p
-              className="text-xl text-gray-400 mb-10"
-              data-aos="zoom-out"
-              data-aos-delay="200">
-              {t('home.ourServices.description')}
-            </p>
-            <div
-              className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4"
-              data-aos="zoom-out"
-              data-aos-delay="300">
-              <div>
-                <a
-                  className="btn text-white bg-gradient-to-t from-blue-600 to-blue-400 hover:to-blue-500 w-full shadow-lg group"
-                  href="#0">
-                  {t('home.ourServices.actions.seeMore')}
-                </a>
-              </div>
-            </div>
-          </div>
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 overflow-hidden">
+      <div className="max-w-3xl mx-auto text-center mb-12">
+        <h2 className="h2 font-uncut-sans mb-4">Nuestros Servicios</h2>
+        <div className="max-w-2xl mx-auto">
+          <p className="text-xl text-gray-400">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
         </div>
       </div>
-    </section>
+      <div>
+        <div className="max-w-[352px] mx-auto sm:max-w-[728px] lg:max-w-none pb-12 md:pb-20">
+          <Highlighter className="flex flex-col md:grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-3">
+            {items.map((item, index) => (
+              <div key={index} className="flex items-center justify-center">
+                <HighlighterItem02>
+                  <div className="relative h-full bg-gray-900 rounded-[inherit] z-20 overflow-hidden">
+                    <div className="flex items-center justify-center w-[352px] h-[198px]">
+                      <img
+                        className="w-full h-full aspect-video object-cover absolute"
+                        src={item.bg}
+                        width={352}
+                        height={198}
+                        alt="Service PixelWise"
+                        aria-hidden="true"
+                      />
+                      <h2 className="text-2xl font-bold">{item.name}</h2>
+                    </div>
+                  </div>
+                </HighlighterItem02>
+              </div>
+            ))}
+
+            <div className="hidden md:flex flex-col items-center justify-center text-center p-4 col-start-2 row-start-2 md:col-start-1 md:row-start-3 md:col-span-2 lg:col-start-2 lg:col-span-1 lg:row-start-2">
+              <h2 className="text-5xl font-black font-sans">
+                {import.meta.env.VITE_APP_NAME}
+              </h2>
+            </div>
+          </Highlighter>
+        </div>
+      </div>
+      <div
+        className="relative mt-5 lg:-mt-16 h-20 lg:h-60 w-full -z-10 "
+        aria-hidden="true">
+        <div
+          className={`opacity-5 pointer-events-none absolute left-1/2 -z-10 -translate-x-1/2 translate-y-1/3 lg:translate-y-2/3 text-center text-[70px] lg:text-[185px] font-black leading-none before:bg-gradient-to-b before:from-blue-200 before:to-blue-100/30 before:to-80% before:bg-clip-text before:text-transparent before:content-['<${import.meta.env.VITE_APP_NAME}/>'] after:absolute after:inset-0 after:bg-blue-500/70 after:bg-clip-text after:text-transparent after:mix-blend-darken after:content-['<${import.meta.env.VITE_APP_NAME}/>'] after:[text-shadow:0_1px_0_white]`}></div>
+        {/* Glow */}
+        <div
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2/3"
+          aria-hidden="true">
+          <div className="h-56 w-56 rounded-full border-[20px] border-blue-700 blur-[80px] will-change-[filter]"></div>
+        </div>
+      </div>
+    </div>
   );
 };

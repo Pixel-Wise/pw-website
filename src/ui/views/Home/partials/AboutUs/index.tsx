@@ -5,7 +5,7 @@ export const AboutUs = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden pb-24">
       <div
         className="absolute top-0 left-0 right-0 bg-gradient-to-b from-gray-800 to-gray-900 opacity-60 h-[10rem] pointer-events-none -z-10"
         aria-hidden="true"
@@ -15,11 +15,11 @@ export const AboutUs = () => {
         aria-hidden="true">
         <img src={Illustration} className="max-w-none" alt="Illustration" />
       </div>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 ">
         <div className="py-12 md:py-20">
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
             <h2 className="h2 font-uncut-sans mb-4">
-              {t('home.aboutUs.title')}
+              {t('home.aboutUs.title')} {import.meta.env.VITE_APP_NAME}
             </h2>
             <div className="max-w-2xl mx-auto">
               <p className="text-xl text-gray-400">

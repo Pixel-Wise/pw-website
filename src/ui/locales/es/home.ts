@@ -12,7 +12,7 @@ export default {
     },
   },
   aboutUs: {
-    title: 'Acerca de PixelWise',
+    title: 'Acerca de',
     description:
       'Loem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     corporateIdentity: {
