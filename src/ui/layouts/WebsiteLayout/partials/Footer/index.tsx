@@ -13,61 +13,9 @@ export const Footer = () => {
             <div className="mb-2">
               {/* Logo */}
               <NavLink className="inline-flex" to="/" aria-label="PixelWise">
-                <svg className="w-8 h-8" viewBox="0 0 32 32">
-                  <defs>
-                    <radialGradient
-                      cx="50%"
-                      cy="89.845%"
-                      fx="50%"
-                      fy="89.845%"
-                      r="108.567%"
-                      gradientTransform="matrix(-.00915 -.82755 .99996 -.00757 -.394 1.319)"
-                      id="logo2-b">
-                      <stop stopColor="#3B82F6" stopOpacity=".64" offset="0%" />
-                      <stop
-                        stopColor="#F472B6"
-                        stopOpacity=".876"
-                        offset="100%"
-                      />
-                    </radialGradient>
-                    <radialGradient
-                      cx="50%"
-                      cy="89.845%"
-                      fx="50%"
-                      fy="89.845%"
-                      r="108.567%"
-                      gradientTransform="matrix(-.00915 -.82755 .99996 -.00757 -.394 1.319)"
-                      id="logo2-d">
-                      <stop stopColor="#3B82F6" stopOpacity=".64" offset="0%" />
-                      <stop
-                        stopColor="#D375C2"
-                        stopOpacity=".833"
-                        offset="50.358%"
-                      />
-                      <stop
-                        stopColor="#FBCFE8"
-                        stopOpacity=".876"
-                        offset="100%"
-                      />
-                    </radialGradient>
-                    <path
-                      d="M12 32c8-6.915 12-12.582 12-17 0-6.627-5.373-12-12-12S0 8.373 0 15c0 4.418 4 10.085 12 17Z"
-                      id="logo2-a"
-                    />
-                    <path
-                      d="M20 29c8-6.915 12-12.582 12-17 0-6.627-5.373-12-12-12S8 5.373 8 12c0 4.418 4 10.085 12 17Z"
-                      id="logo2-c"
-                    />
-                  </defs>
-                  <g fill="none" fillRule="evenodd">
-                    <use
-                      fill="url(#logo2-b)"
-                      opacity=".64"
-                      transform="matrix(1 0 0 -1 0 35)"
-                    />
-                    <use fill="url(#logo2-d)" opacity=".961" />
-                  </g>
-                </svg>
+                <h2 className="text-3xl font-black font-sans">
+                  {import.meta.env.VITE_APP_NAME}
+                </h2>
               </NavLink>
             </div>
           </div>
@@ -134,7 +82,7 @@ export const Footer = () => {
         <div className="w-full text-center py-1">
           <div className="text-sm text-gray-600">
             <span className="text-gray-400">
-              Hecho con ❤️ por PixelWise © {currentYear}
+              Hecho con ❤️ por {import.meta.env.VITE_APP_NAME} © {currentYear}
             </span>
           </div>
         </div>
