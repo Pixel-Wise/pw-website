@@ -26,4 +26,4 @@ jobs:
         with:
           token: '${{ secrets.VERCEL_TOKEN }}'
           org-id: PixelWise
-          project-name: pw-website
+          project-name: pw-website-dev
