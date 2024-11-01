@@ -6,10 +6,18 @@ import { OurServicesHero } from './partials/OurServicesHero';
 export const Home = () => {
   return (
     <>
-      <OurServicesHero />
-      <OurClients />
-      <AboutUs />
-      <OurServices />
+      <div>
+        <OurServicesHero />
+      </div>
+      <div id="ourClients">
+        <OurClients />
+      </div>
+      <div id="aboutUs">
+        <AboutUs />
+      </div>
+      <div id="ourServices">
+        <OurServices />
+      </div>
     </>
   );
 };

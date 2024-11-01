@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { Link } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
 
 export const Header = ({ nav = true }: { nav?: boolean }) => {
@@ -25,6 +26,34 @@ export const Header = ({ nav = true }: { nav?: boolean }) => {
                 {/* Desktop sign in NavLinks */}
                 <ul className="flex grow justify-end flex-wrap items-center">
                   <li>
+                    <Link
+                      className="font-medium text-gray-400 hover:text-blue-500 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                      to="aboutUs">
+                      {t('header.aboutUs')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="font-medium text-gray-400 hover:text-blue-500 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                      to="ourServices">
+                      {t('header.ourServices')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="font-medium text-gray-400 hover:text-blue-500 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                      to="team">
+                      {t('header.team')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="font-medium text-gray-400 hover:text-blue-500 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                      to="ourClients">
+                      {t('header.ourClients')}
+                    </Link>
+                  </li>
+                  {/* <li>
                     <NavLink
                       className="font-medium text-gray-400 hover:text-blue-500 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
                       to="/signin">
@@ -40,7 +69,7 @@ export const Header = ({ nav = true }: { nav?: boolean }) => {
                         -&gt;
                       </span>
                     </NavLink>
-                  </li>
+                  </li> */}
                 </ul>
               </nav>
             )}
