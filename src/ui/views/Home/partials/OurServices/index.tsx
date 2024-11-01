@@ -114,7 +114,7 @@ export const OurServices = () => {
         className="relative mt-5 lg:-mt-16 h-20 lg:h-60 w-full -z-10 "
         aria-hidden="true">
         <div
-          className={`opacity-5 pointer-events-none absolute left-1/2 -z-10 -translate-x-1/2 translate-y-1/3 lg:translate-y-2/3 text-center text-[70px] lg:text-[185px] font-black leading-none before:bg-gradient-to-b before:from-blue-200 before:to-blue-100/30 before:to-80% before:bg-clip-text before:text-transparent before:content-['<${import.meta.env.VITE_APP_NAME}/>'] after:absolute after:inset-0 after:bg-blue-500/70 after:bg-clip-text after:text-transparent after:mix-blend-darken after:content-['<${import.meta.env.VITE_APP_NAME}/>'] after:[text-shadow:0_1px_0_white]`}></div>
+          className={`opacity-5 pointer-events-none absolute left-1/2 -z-10 -translate-x-1/2 translate-y-1/3 lg:translate-y-2/3 text-center text-[70px] lg:text-[185px] font-black leading-none before:bg-gradient-to-b before:from-blue-200 before:to-blue-100/30 before:to-80% before:bg-clip-text before:text-transparent before:content-['<PixelWise/>'] after:absolute after:inset-0 after:bg-blue-500/70 after:bg-clip-text after:text-transparent after:mix-blend-darken after:content-['<PixelWise/>'] after:[text-shadow:0_1px_0_white]`}></div>
         {/* Glow */}
         <div
           className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2/3"
