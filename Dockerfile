@@ -16,6 +16,10 @@ RUN yarn install --frozen-lockfile && yarn cache clean
 # Copia el resto de los archivos de la aplicación
 COPY . .
 
+RUN yarn add -D @types/react-scroll
+
+RUN echo "declare module 'vite-plugin-eslint';" > src/types/custom.d.ts
+
 # Genera el build de la aplicación (carpeta 'dist')
 RUN yarn build
 
