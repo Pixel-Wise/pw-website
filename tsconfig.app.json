@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
-    "typeRoots": ["./node_modules/@types", "./src/types"],
-    "types": ["vite-plugin-eslint"],
+    "types": [],
+    "typeRoots": [
+      "node_modules/@types",
+      "node_modules/vite-plugin-eslint/dist"
+    ],
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable", "esnext"],
