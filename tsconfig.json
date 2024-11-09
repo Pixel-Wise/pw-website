@@ -3,11 +3,5 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ],
-  "compilerOptions": {
-    "typeRoots": ["./node_modules/@types", "./src/types"],
-    "forceConsistentCasingInFileNames": true,
-    "strict": true
-  },
-  "include": ["src/types/**/*.d.ts"]
+  ]
 }
