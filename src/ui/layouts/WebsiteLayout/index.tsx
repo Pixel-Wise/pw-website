@@ -180,7 +180,10 @@ export const WebsiteLayout = () => {
                   <button
                     type="submit"
                     disabled={!isValid}
-                    className="btn-sm text-white bg-gradient-to-t from-blue-600 to-blue-400 hover:to-blue-500 w-full shadow-lg group">
+                    className={`
+                      btn text-xs text-white  bg-gradient-to-t from-blue-600 to-blue-400 hover:to-blue-500 w-full shadow-lg group
+                      ${!isValid && 'opacity-30 hover:bg-primary-500'}    
+                    `}>
                     Enviar
                     <span className="tracking-normal text-blue-200 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
                       -&gt;
