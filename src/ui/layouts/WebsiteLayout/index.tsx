@@ -2,13 +2,28 @@ import { Outlet } from 'react-router-dom';
 
 import { Header } from './partials/Header';
 import { Footer } from './partials/Footer';
+import { toast } from 'react-toastify';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { IContactForm, validationSchema } from './validationSchema';
 
 import './styles.css';
 import { useEffect, useState } from 'react';
 import { ChatCenteredDots, XSquare } from '@phosphor-icons/react';
+import { IContactRequest } from '@infrastructure/apis/Contact/types';
+import { useContact } from '@ui/hooks/useContact';
 
 export const WebsiteLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { sendContact } = useContact();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isValid },
+  } = useForm<IContactForm>({
+    resolver: yupResolver(validationSchema),
+  });
 
   const handleScroll = () => {
     const header = document.getElementById('header');
@@ -34,6 +49,20 @@ export const WebsiteLayout = () => {
 
   const toggleMenu = () => {
     setIsOpen((prevIsOpen) => !prevIsOpen);
+  };
+
+  const onSubmit = (data: IContactForm) => {
+    const payload: IContactRequest = { ...data };
+
+    sendContact.mutate(payload, {
+      onSuccess: (response) => {
+        reset();
+        toast.success(response.message);
+      },
+      onError: (response) => {
+        toast.error(response.message);
+      },
+    });
   };
 
   return (
@@ -75,34 +104,25 @@ export const WebsiteLayout = () => {
               </p>
             </div>
             <div className="my-1 md:my-16">
-              <form>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="space-y-4">
                   <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
                     <div className="sm:w-1/2">
                       <label
                         className="block text-sm text-gray-400 font-medium mb-1"
                         htmlFor="name">
-                        Name <span className="text-pink-500">*</span>
+                        Nombre <span className="text-pink-500">*</span>
                       </label>
                       <input
+                        {...register('name')}
                         id="name"
                         className="form-input py-2 w-full"
                         type="text"
                         required
                       />
-                    </div>
-                    <div className="sm:w-1/2">
-                      <label
-                        className="block text-sm text-gray-400 font-medium mb-1"
-                        htmlFor="surname">
-                        Surname <span className="text-pink-500">*</span>
-                      </label>
-                      <input
-                        id="surname"
-                        className="form-input py-2 w-full"
-                        type="text"
-                        required
-                      />
+                      <small className="text-rose-500">
+                        {errors.name?.message}
+                      </small>
                     </div>
                   </div>
                   <div>
@@ -112,11 +132,15 @@ export const WebsiteLayout = () => {
                       Email <span className="text-pink-500">*</span>
                     </label>
                     <input
+                      {...register('email')}
                       id="email"
                       className="form-input py-2 w-full"
                       type="email"
                       required
-                    />
+                    />{' '}
+                    <small className="text-rose-500">
+                      {errors.email?.message}
+                    </small>
                   </div>
                   <div>
                     <label
@@ -125,11 +149,15 @@ export const WebsiteLayout = () => {
                       Subject <span className="text-pink-500">*</span>
                     </label>
                     <input
-                      id="email"
+                      {...register('subject')}
+                      id="subject"
                       className="form-input py-2 w-full"
                       type="email"
                       required
-                    />
+                    />{' '}
+                    <small className="text-rose-500">
+                      {errors.subject?.message}
+                    </small>
                   </div>
                   <div>
                     <label
@@ -138,14 +166,21 @@ export const WebsiteLayout = () => {
                       Message <span className="text-pink-500">*</span>
                     </label>
                     <textarea
+                      {...register('message')}
                       id="message"
                       className="form-input py-2 w-full"
                       required
                     />
-                  </div>
+                  </div>{' '}
+                  <small className="text-rose-500">
+                    {errors.message?.message}
+                  </small>
                 </div>
                 <div className="mt-6">
-                  <button className="btn-sm text-white bg-gradient-to-t from-blue-600 to-blue-400 hover:to-blue-500 w-full shadow-lg group">
+                  <button
+                    type="submit"
+                    disabled={!isValid}
+                    className="btn-sm text-white bg-gradient-to-t from-blue-600 to-blue-400 hover:to-blue-500 w-full shadow-lg group">
                     Enviar
                     <span className="tracking-normal text-blue-200 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
                       -&gt;
