@@ -85,39 +85,35 @@ export const OurServices = () => {
             {items.map((item, index) => (
               <div key={index} className="flex items-center justify-center">
                 <HighlighterItem02>
-  <Link
-    to={item.link}
-    className=
-      "relative block w-[352px] h-[198px] bg-gray-900 rounded-[inherit] overflow-hidden"
-    
-  >
-    {/* 1) Ilustración de fondo desenfocado */}
-    <img
-      src={item.bg}
-      alt=""
-      className="absolute inset-0 w-full h-full object-cover blur-sm"
-      aria-hidden="true"
-    />
-    {/* 2) Capa semitransparente para reforzar legibilidad */}
-    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <Link
+                    to={item.link}
+                    className="relative block w-[352px] h-[198px] bg-gray-900 rounded-[inherit] overflow-hidden z-20 cursor-pointer"
+                  >
+                    {/* 1) Ilustración de fondo desenfocado */}
+                    <img
+                      src={item.bg}
+                      alt=""
+                      className="absolute inset-0 w-full h-full object-cover blur-sm pointer-events-none"
+                      aria-hidden="true"
+                    />
+                    {/* 2) Capa semitransparente para reforzar legibilidad */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent pointer-events-none"></div>
 
-    {/* 3) Contenido “alto nivel” */}
-    <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
-      {/* Icono o svg de cada servicio */}
-      <img
-        src={item.img}
-        alt={item.name}
-        className="w-12 h-12 mb-2 object-contain"
-      />
-      {/* Nombre del servicio */}
-      <h2 className="text-white text-2xl lg:text-3xl font-semibold">
-        {item.name}
-      </h2>
-    </div>
-  </Link>
-  
-</HighlighterItem02>
-
+                    {/* 3) Contenido "alto nivel" */}
+                    <div className="relative z-30 flex flex-col items-center justify-center h-full px-4 text-center pointer-events-none">
+                      {/* Icono o svg de cada servicio */}
+                      <img
+                        src={item.img}
+                        alt={item.name}
+                        className="w-12 h-12 mb-2 object-contain"
+                      />
+                      {/* Nombre del servicio */}
+                      <h2 className="text-white text-2xl lg:text-3xl font-semibold">
+                        {item.name}
+                      </h2>
+                    </div>
+                  </Link>
+                </HighlighterItem02>
               </div>
             ))}
 
