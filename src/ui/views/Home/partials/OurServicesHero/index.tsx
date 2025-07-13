@@ -1,52 +1,117 @@
-import { useTranslation } from 'react-i18next';
-import Illustration from '@assets/images/hero-illustration.svg';
+import { useTranslation, Trans } from 'react-i18next';
+import PixelWiseLogo from '@assets/images/SVG_ICON.svg';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
+import { useEffect, useState } from 'react';
+import { loadAll } from '@tsparticles/all';
+import { type IOptions, type RecursivePartial } from '@tsparticles/engine';
 
 export const OurServicesHero = () => {
   const { t } = useTranslation();
+  const [init, setInit] = useState(false);
+  const [opacity, setOpacity] = useState(1); // 👈 Controla la opacidad
+
+  useEffect(() => {
+    // Carga las partículas
+    initParticlesEngine(async (engine) => {
+      await loadAll(engine);
+    }).then(() => setInit(true));
+
+    // Controla la opacidad al hacer scroll
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const fadeOutHeight = window.innerHeight / 2; // altura para desaparecer
+      const newOpacity = Math.max(1 - scrollTop / fadeOutHeight, 0);
+      setOpacity(newOpacity);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const particleOptions: RecursivePartial<IOptions> = {
+    background: {
+      color: { value: 'transparent' }, // Fondo transparente
+    },
+    fpsLimit: 60,
+    particles: {
+      color: { value: '#ffffff' },
+      move: {
+        enable: true,
+        speed: 1,
+        direction: 'none',
+        outModes: { default: 'out' },
+      },
+      number: {
+        density: {
+          enable: true,
+          width: 800,
+          height: 800,
+        },
+        value: 10,
+      },
+      opacity: {
+        value: { min: 0.3, max: 0.7 },
+      },
+      shape: { type: 'square' },
+      size: { value: { min: 4, max: 12 } },
+    },
+    detectRetina: true,
+  };
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+      {/* Particles limited to Hero */}
       <div
-        className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-800 to-gray-900 opacity-60 h-[10rem] pointer-events-none -z-10"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute left-1/2 -translate-x-1/2 pointer-events-none -z-10"
-        aria-hidden="true">
-        <img src={Illustration} className="max-w-none" alt="PixelWise hero" />
+        className="absolute top-0 left-0 w-full h-full -z-10 transition-opacity duration-300"
+        style={{ opacity }}
+      >
+        {init && <Particles id="tsparticles" options={particleOptions} />}
       </div>
 
+      {/* Gradient background */}
+      <div
+        className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-800 to-gray-900 opacity-60 h-[10rem] pointer-events-none"
+        aria-hidden="true"
+      />
+
+      {/* Hero Content */}
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-32 pb-12 md:pt-40 md:pb-20">
-          {/* Hero content */}
-          <div className="max-w-xl mx-auto md:max-w-[640px] md:mx-0 text-center md:text-left">
-            <div data-aos="zoom-out">
-              <div className="relative text-sm text-gray-300 bg-gray-800 rounded-full inline-block px-4 py-1 mb-6 before:content-[''] before:absolute before:-z-10 before:inset-0 before:-m-0.5 before:bg-gradient-to-t before:from-gray-800 before:to-gray-800 before:via-gray-600 before:rounded-full">
-                <div className="text-gray-400">
-                  {t('home.ourServices.subtitle')}
-                </div>
-              </div>
+          <div className="max-w-3xl mx-auto text-center">
+            <div data-aos="zoom-out" className="mb-8">
+              <img
+                src={PixelWiseLogo}
+                className="inline-block w-20 h-20"
+                alt="Logo de PixelWise"
+              />
             </div>
             <h1
-              className="h1 font-uncut-sans mb-6"
+              className="h1 font-uncut-sans mb-9"
               data-aos="zoom-out"
-              data-aos-delay="100">
-              {t('home.ourServices.title')}
+              data-aos-delay="200"
+            >
+              <Trans
+                i18nKey="home.ourServices.title"
+                components={{ blue: <span className="text-blue-500" /> }}
+              />
             </h1>
             <p
               className="text-xl text-gray-400 mb-10"
               data-aos="zoom-out"
-              data-aos-delay="200">
+              data-aos-delay="300"
+            >
               {t('home.ourServices.description')}
             </p>
             <div
-              className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4"
+              className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center space-y-4 sm:space-y-0 sm:space-x-4"
               data-aos="zoom-out"
-              data-aos-delay="300">
+              data-aos-delay="400"
+            >
               <div>
                 <a
                   className="btn text-white bg-gradient-to-t from-blue-600 to-blue-400 hover:to-blue-500 w-full shadow-lg group"
-                  href="#0">
+                  href="#0"
+                >
                   {t('home.ourServices.actions.seeMore')}
                 </a>
               </div>

@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import Illustration from '@assets/images/features-illustration.svg';
+// import Illustration from '@assets/images/features-illustration.svg';
 
 export const AboutUs = () => {
   const { t } = useTranslation();
@@ -13,7 +13,7 @@ export const AboutUs = () => {
       <div
         className="absolute top-0 left-1/2 -z-10 ml-[390px]"
         aria-hidden="true">
-        <img src={Illustration} className="max-w-none" alt="Illustration" />
+        {/* <img src={Illustration} className="max-w-none" alt="Illustration" /> */}
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 ">
         <div className="py-12 md:py-20">
@@ -29,7 +29,7 @@ export const AboutUs = () => {
           </div>
         </div>
         <div className="max-w-sm mx-auto grid gap-8 md:grid-cols-3 lg:gap-16 items-start md:max-w-none">
-          {/* 1st item */}
+          {/* 1st item MISON*/}
           <div className="flex flex-col items-center" data-aos="zoom-out">
             <div className="mb-4">
               <svg
@@ -70,7 +70,7 @@ export const AboutUs = () => {
               {t('home.aboutUs.corporateIdentity.mission.description')}
             </p>
           </div>
-          {/* 2nd item */}
+          {/* 2nd item  VISION*/}
           <div
             className="flex flex-col items-center"
             data-aos="zoom-out"
@@ -114,7 +114,7 @@ export const AboutUs = () => {
               {t('home.aboutUs.corporateIdentity.vision.description')}
             </p>
           </div>
-          {/* 3rd item */}
+          {/* 3rd item VALORES*/}
           <div
             className="flex flex-col items-center"
             data-aos="zoom-out"
@@ -155,7 +155,7 @@ export const AboutUs = () => {
               {t('home.aboutUs.corporateIdentity.values.title')}
             </h4>
             <p className="text-lg text-gray-400 text-center">
-              {t('home.aboutUs.corporateIdentity.vision.description')}
+              {t('home.aboutUs.corporateIdentity.values.description')}
             </p>
           </div>
         </div>

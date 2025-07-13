@@ -1,5 +1,5 @@
 import { AboutUs } from './partials/AboutUs';
-import { OurClients } from './partials/OurClients';
+// import { OurClients } from './partials/OurClients';
 import { OurServices } from './partials/OurServices';
 import { OurServicesHero } from './partials/OurServicesHero';
 
@@ -10,7 +10,7 @@ export const Home = () => {
         <OurServicesHero />
       </div>
       <div id="ourClients">
-        <OurClients />
+        
       </div>
       <div id="aboutUs">
         <AboutUs />

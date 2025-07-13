@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "types": [],
+    // "types": [],
     "typeRoots": [
       "node_modules/@types",
       "node_modules/vite-plugin-eslint/dist"
@@ -37,6 +37,6 @@
       "@usecases/*": ["src/usecases/*"]
     }
   },
-  "include": ["src", "src/**/*", "src/types/custom.d.ts"],
+  "include": ["src", "vite-env.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

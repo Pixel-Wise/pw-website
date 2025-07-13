@@ -1,81 +1,85 @@
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
+import SVG_ICON from '@assets/images/SVG_ICON.svg';
+import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 
-export const Header = ({ nav = true }: { nav?: boolean }) => {
+interface HeaderProps {
+  nav?: boolean;
+}
+
+export const Header: React.FC<HeaderProps> = ({ nav = true }) => {
   const { t } = useTranslation();
 
   return (
-    <>
-      <header className="absolute w-full z-30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Site branding */}
-            <div className="shrink-0 mr-4">
-              {/* Logo */}
-              <NavLink className="block" to="/" aria-label="Cruip">
-                <h2 className="text-3xl font-black font-sans">
-                  {import.meta.env.VITE_APP_NAME}
-                </h2>
-              </NavLink>
-            </div>
+    <header className="absolute w-full z-30 backdrop-blur-sm">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          
+          {/* Logo + Nombre */}
+          <NavLink to="/" aria-label="PixelWise" className="flex items-center">
+            <img
+              src={SVG_ICON}
+              alt="Logo PixelWise"
+              className="h-30 w-30 mr-2"
+            />
+            <h2 className="text-2xl font-black font-sans  hover:text-blue-400 text-gray-200">
+              {import.meta.env.VITE_APP_NAME}
+            </h2>
+          </NavLink>
 
-            {/* Desktop navigation */}
-            {nav && (
-              <nav className="flex grow">
-                {/* Desktop sign in NavLinks */}
-                <ul className="flex grow justify-end flex-wrap items-center">
-                  <li>
-                    <Link
-                      className="font-medium text-gray-400 hover:text-blue-500 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
-                      to="aboutUs">
-                      {t('header.aboutUs')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className="font-medium text-gray-400 hover:text-blue-500 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
-                      to="ourServices">
-                      {t('header.ourServices')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className="font-medium text-gray-400 hover:text-blue-500 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
-                      to="team">
-                      {t('header.team')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className="font-medium text-gray-400 hover:text-blue-500 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
-                      to="ourClients">
-                      {t('header.ourClients')}
-                    </Link>
-                  </li>
-                  {/* <li>
-                    <NavLink
-                      className="font-medium text-gray-400 hover:text-blue-500 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
-                      to="/signin">
-                      {t('header.signIn')}
-                    </NavLink>
-                  </li>
-                  <li className="ml-3">
-                    <NavLink
-                      className="btn-sm text-white bg-gradient-to-t from-blue-600 to-blue-400 hover:to-blue-500 w-full shadow-lg group"
-                      to="#0">
-                      {t('header.start')}{' '}
-                      <span className="tracking-normal text-blue-200 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
-                        -&gt;
-                      </span>
-                    </NavLink>
-                  </li> */}
+          {/* Navegación + Redes (solo desktop si nav=true) */}
+          {nav && (
+            <div className="flex items-center space-x-8">
+              
+              {/* Enlaces de sección */}
+              <nav>
+                <ul className="flex space-x-6">
+                  {['aboutUs', 'ourServices', 'team'].map((key) => (
+                    <li key={key}>
+                      <Link
+                        to={key}
+                        smooth
+                        className="text-gray-200 hover:text-blue-500 px-3 py-2 transition"
+                      >
+                        {t(`header.${key}`)}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </nav>
-            )}
-          </div>
+
+              {/* Iconos sociales */}
+              <div className="flex space-x-4">
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-200 hover:text-blue-600 transition"
+                >
+                  <FaFacebookF size={18} />
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-200 hover:text-pink-500 transition"
+                >
+                  <FaInstagram size={18} />
+                </a>
+                <a
+                  href="https://youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-200 hover:text-red-600 transition"
+                >
+                  <FaYoutube size={18} />
+                </a>
+              </div>
+            </div>
+          )}
         </div>
-      </header>
-    </>
+      </div>
+    </header>
   );
 };

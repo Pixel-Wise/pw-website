@@ -26,12 +26,14 @@
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba(17, 25, 40, 0.75);
   padding: 15px;
+  justify-content: end;
 }
 
-.menu.open {
-  transform: translateX(0);
+/* .menu.open { */
+  /* transform: translateX(0);
   flex-direction: column;
-}
+  justify-content: flex-end; */
+/* } */
 
 .icon {
   right: 20px;

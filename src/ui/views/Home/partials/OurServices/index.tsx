@@ -5,7 +5,7 @@ import CustomerBg02 from '@assets/images/pricing-illustration.svg';
 import CustomerImg03 from '@assets/images/pricing-illustration.svg';
 import CustomerBg03 from '@assets/images/pricing-illustration.svg';
 import CustomerImg04 from '@assets/images/pricing-illustration.svg';
-import CustomerBg04 from '@assets/images/pricing-illustration.svg';
+import CustomerBg04 from '@assets/images/escritorio.jpg';
 import CustomerImg05 from '@assets/images/pricing-illustration.svg';
 import CustomerBg05 from '@assets/images/pricing-illustration.svg';
 import CustomerImg06 from '@assets/images/pricing-illustration.svg';
@@ -19,49 +19,49 @@ import Highlighter, { HighlighterItem02 } from '@ui/components/highlighter';
 export const OurServices = () => {
   const items = [
     {
-      name: 'Service 1',
+      name: 'Software a la medida',
       img: CustomerImg01,
       bg: CustomerBg01,
       link: '/customers/single-post',
     },
     {
-      name: 'Service 2',
+      name: 'Desarrollo de App',
       img: CustomerImg02,
       bg: CustomerBg02,
       link: '/customers/single-post',
     },
     {
-      name: 'Service 3',
+      name: 'Consultoría tecnológica',
       img: CustomerImg03,
       bg: CustomerBg03,
       link: '/customers/single-post',
     },
     {
-      name: 'Service 4',
+      name: 'Desarrollo paginas web',
       img: CustomerImg04,
       bg: CustomerBg04,
       link: '/customers/single-post',
     },
     {
-      name: 'Service 5',
+      name: 'Seguridad de datos',
       img: CustomerImg05,
       bg: CustomerBg05,
       link: '/customers/single-post',
     },
     {
-      name: 'Service 6',
+      name: 'Stream Service',
       img: CustomerImg06,
       bg: CustomerBg06,
       link: '/customers/single-post',
     },
     {
-      name: 'Service 7',
+      name: 'Renta de Servidores',
       img: CustomerImg07,
       bg: CustomerBg07,
       link: '/customers/single-post',
     },
     {
-      name: 'Service 8',
+      name: 'Infraestructura como servicio',
       img: CustomerImg08,
       bg: CustomerBg08,
       link: '/customers/single-post',
@@ -71,34 +71,52 @@ export const OurServices = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 overflow-hidden">
       <div className="max-w-3xl mx-auto text-center mb-12">
-        <h2 className="h2 font-uncut-sans mb-4">Nuestros Servicios</h2>
+        <h2 className="h2 font-uncut-sans mb-4">Our PixelWise Service</h2>
         <div className="max-w-2xl mx-auto">
-          <p className="text-xl text-gray-400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          <p className="text-xl text-gray-300">
+            En PixelWise, ofrecemos soluciones tecnológicas a la medida que impulsan tu negocio. Nos especializamos en:
           </p>
         </div>
       </div>
       <div>
         <div className="max-w-[352px] mx-auto sm:max-w-[728px] lg:max-w-none pb-12 md:pb-20">
-          <Highlighter className="flex flex-col md:grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-3">
+          <Highlighter className="flex flex-col md:grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-3">
             {items.map((item, index) => (
               <div key={index} className="flex items-center justify-center">
                 <HighlighterItem02>
-                  <div className="relative h-full bg-gray-900 rounded-[inherit] z-20 overflow-hidden">
-                    <div className="flex items-center justify-center w-[352px] h-[198px]">
-                      <img
-                        className="w-full h-full aspect-video object-cover absolute"
-                        src={item.bg}
-                        width={352}
-                        height={198}
-                        alt="Service PixelWise"
-                        aria-hidden="true"
-                      />
-                      <h2 className="text-2xl font-bold">{item.name}</h2>
-                    </div>
-                  </div>
-                </HighlighterItem02>
+  <a
+    href={item.link}
+    className=
+      "relative block w-[352px] h-[198px] bg-gray-900 rounded-[inherit] overflow-hidden"
+    
+  >
+    {/* 1) Ilustración de fondo desenfocado */}
+    <img
+      src={item.bg}
+      alt=""
+      className="absolute inset-0 w-full h-full object-cover blur-sm"
+      aria-hidden="true"
+    />
+    {/* 2) Capa semitransparente para reforzar legibilidad */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+
+    {/* 3) Contenido “alto nivel” */}
+    <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
+      {/* Icono o svg de cada servicio */}
+      <img
+        src={item.img}
+        alt={item.name}
+        className="w-12 h-12 mb-2 object-contain"
+      />
+      {/* Nombre del servicio */}
+      <h2 className="text-white text-2xl lg:text-3xl font-semibold">
+        {item.name}
+      </h2>
+    </div>
+  </a>
+  
+</HighlighterItem02>
+
               </div>
             ))}
 

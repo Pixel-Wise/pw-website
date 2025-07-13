@@ -1,4 +1,6 @@
 import { NavLink } from 'react-router-dom';
+import { FaFacebookF, FaInstagram,FaLinkedinIn} from 'react-icons/fa';
+
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,7 +11,7 @@ export const Footer = () => {
         {/* Blocks */}
         <div className="grid sm:grid-cols-12 gap-8 py-8 md:py-12 mb-0">
           {/* 1st block */}
-          <div className="sm:col-span-12 lg:col-span-4 lg:max-w-xs">
+          <div className="sm:col-span-12 lg:col-span-2 lg:max-w-xs">
             <div className="mb-2">
               {/* Logo */}
               <NavLink className="inline-flex" to="/" aria-label="PixelWise">
@@ -78,7 +80,46 @@ export const Footer = () => {
               </li>
             </ul>
           </div>
+          {/* {5th block} */}
+            <div className="sm:col-span-6 md:col-span-6 lg:col-span-2">
+            <h6 className="text-xs text-gray-200 font-semibold uppercase mb-2">
+              Siguenos
+            </h6>
+            <ul className="flex space-x-4 text-sm">
+              <li>
+               <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-200 hover:text-blue-600 transition"
+                >
+                  <FaFacebookF size={18} />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-200 hover:text-pink-500 transition"
+                >
+                  <FaInstagram size={18} />
+                </a>
+              </li>
+              <li>
+                 <a
+                  href="https://linkedin.com"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="text-gray-200 hover:text-blue-400 transition"
+                  >
+                   <FaLinkedinIn size={18} />
+                 </a>
+               </li>
+            </ul>
+          </div>
         </div>
+       
         <div className="w-full text-center py-1">
           <div className="text-sm text-gray-600">
             <span className="text-gray-400">
@@ -86,6 +127,7 @@ export const Footer = () => {
             </span>
           </div>
         </div>
+        
       </div>
     </footer>
   );

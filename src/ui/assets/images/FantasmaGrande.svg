@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 2000">
+  <!-- Partes que usan el color del texto -->
+  <path d="M982.73 1521.74... (todo el path largo) ...-13.91.95-20.91 1.09z" fill="currentColor"/>
+  <path d="M811.03 540.46c-3.35... (todo el path largo) ...1.23-.28 1.84-.42z" fill="currentColor"/>
+  <path d="M1318.6 840.58... (todo el path largo) ...1.8-1.36 3.01-1.38z" fill="currentColor"/>
+  <path d="M451.12 828.3c-2.66... (todo el path largo) ...1.53-.38 2.29-.56z" fill="currentColor"/>
+  <path d="M1198.59 1229.99h-36.42... (todo el path largo) ...33.07 0v-.38z" fill="currentColor"/>
+  <path d="M910.09 1314.15c-11.99-.13... (todo el path largo) ...-13.43 0H910.1v-.31z" fill="currentColor"/>
+  <path d="M1101.56 1158.22c11.51.17... (todo el path largo) ...10.56 0 15.83 0v.06z" fill="currentColor"/>
+  <path d="M950.56 1334.81c.62 1.24... (todo el path largo) ...-.12 5.14.72z" fill="currentColor"/>
+  <path d="M1006.72 1228.28h-30.2c... (todo el path largo) ...-18.68-.42v-.14z" fill="currentColor"/>
+  <path d="M1101.31 1249.35h33.56c... (todo el path largo) ...34.51.47v.15z" fill="currentColor"/>
+  <path d="M1102.1 1138.52c-11.34-.11... (todo el path largo) ...-7.67 0v-.26z" fill="currentColor"/>
+  <path d="M1006.28 1314.66h-32.61c... (todo el path largo) ...-19.18-.32v-.27z" fill="currentColor"/>
+  <path d="M1006.24 1398.83h-31.18c... (todo el path largo) ...-31.18-.48v-.16z" fill="currentColor"/>
+  <path d="M1236.39 1250.43c-.25... (todo el path largo) ...2.21.1 3.81.18z" fill="currentColor"/>
+  <path d="M868.11 1416.81c1.76-.63... (todo el path largo) ...-.44-1.82-.68-2.85z" fill="currentColor"/>
+  <path d="M970.39 1418.54c6.86 0... (todo el path largo) ...-.43-3.52.61-5.2z" fill="currentColor"/>
+  <path d="M1100.91 1335.71h33.05c... (todo el path largo) ...20.75 0 31.13 0v.45z" fill="currentColor"/>
+  <path d="M1236.01 1139.63c-1.4.71... (todo el path largo) ...68 2.77.14 4.17z" fill="currentColor"/>
+  <path d="M803.97 690.48c37.56-.41... (todo el path largo) ...4.47-.27 6.56-.4z" fill="currentColor"/>
+  <path d="M1043.31 688.5c37.98-.91... (todo el path largo) ...9.54-13.33l5.6-.46z" fill="currentColor"/>
+  <path d="M960.9 925.3c.38 18.23... (todo el path largo) ...36.04 17.63 35.86 35.37z" fill="currentColor"/>
+
+  <!-- Ojos y partes blancas. Estas se quedan con su color fijo -->
+  <path d="M811.03 540.46c6.24-2.92... (todo el path largo) ...40.49-45.92 3.72-3.47 8.28-5.96 12.8-8.38z" fill="white"/>
+  <path d="M1505.99 1063.99c-.36.14... (todo el path largo) ...19.69 11.68-.29.1-.54.27-.74.5z" fill="white"/>
+  <path d="M608.36 905.82q3.81 2.26... (todo el path largo) ...6.64 6.43 10.93 8.37z" fill="white"/>
+  <path d="M843.82 758.8c-.06 4.04... (todo el path largo) ...16.43 15.7 16.43 28.3z" fill="white"/>
+  <path d="M1051.87 724.18c7.22.12... (todo el path largo) ...20.02-24.49 35.07-24.06z" fill="white"/>
+</svg>

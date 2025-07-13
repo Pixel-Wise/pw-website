@@ -9,6 +9,10 @@ module.exports = {
         inter: ['var(--font-inter)', 'sans-serif'],
         'uncut-sans': ['var(--font-uncut-sans)', 'sans-serif'],
       },
+      colors:{
+        // primary: '#008c9e',
+      },
+
       fontSize: {
         xs: ['0.75rem', { lineHeight: '1.5' }],
         sm: ['0.875rem', { lineHeight: '1.5715' }],
@@ -22,7 +26,7 @@ module.exports = {
         '6xl': ['3.75rem', { lineHeight: '1.166', letterSpacing: '-0.01em' }],
         '7xl': ['5rem', { lineHeight: '1', letterSpacing: '-0.01em' }],
       },
-      letterSpacing: {
+      letterSpacing: {                       
         tighter: '-0.02em',
         tight: '-0.01em',
         normal: '0',
