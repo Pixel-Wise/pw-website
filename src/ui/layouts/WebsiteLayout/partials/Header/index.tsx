@@ -35,7 +35,7 @@ export const Header: React.FC<HeaderProps> = ({ nav = true }) => {
               {/* Enlaces de sección */}
               <nav>
                 <ul className="flex space-x-6">
-                  {['aboutUs', 'ourServices', 'team'].map((key) => (
+                  {['aboutUs', 'ourServices', 'team', 'contact'].map((key) => (
                     <li key={key}>
                       <Link
                         to={key}

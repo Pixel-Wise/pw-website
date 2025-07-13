@@ -5,4 +5,5 @@ export default {
   ourServices: 'Our Services',
   ourClients: 'Our Clients',
   team: 'Team',
+  contact: 'Contact',
 };

@@ -2,6 +2,7 @@ import { AboutUs } from './partials/AboutUs';
 // import { OurClients } from './partials/OurClients';
 import { OurServices } from './partials/OurServices';
 import { OurServicesHero } from './partials/OurServicesHero';
+import { ContactForm } from '@ui/components/ContactForm';
 
 export const Home = () => {
   return (
@@ -17,6 +18,9 @@ export const Home = () => {
       </div>
       <div id="ourServices">
         <OurServices />
+      </div>
+      <div id="contact">
+        <ContactForm />
       </div>
     </>
   );
