@@ -58,36 +58,7 @@ export const Footer = () => {
               </li>
             </ul>
           </div>
-          {/* 4th block - Blog */}
-          <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h6 className="text-xs text-gray-200 font-semibold uppercase mb-2">
-              Blog
-            </h6>
-            <ul className="text-sm space-y-2">
-              <li>
-                <NavLink
-                  className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
-                  to="/blog">
-                  Artículos
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
-                  to="/blog">
-                  Tendencias
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className="text-gray-400 hover:text-blue-500 transition duration-150 ease-in-out"
-                  to="/blog">
-                  Tutoriales
-                </NavLink>
-              </li>
-            </ul>
-          </div>
-          {/* 5th block - Legals */}
+          {/* 4th block - Legals */}
           <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
             <h6 className="text-xs text-gray-200 font-semibold uppercase mb-2">
               Legals
@@ -109,8 +80,8 @@ export const Footer = () => {
               </li>
             </ul>
           </div>
-          {/* 6th block - Social */}
-            <div className="sm:col-span-6 md:col-span-6 lg:col-span-2">
+          {/* 5th block - Social */}
+            <div className="sm:col-span-6 md:col-span-6 lg:col-span-4">
             <h6 className="text-xs text-gray-200 font-semibold uppercase mb-2">
               Siguenos
             </h6>

@@ -46,6 +46,14 @@ export const Header: React.FC<HeaderProps> = ({ nav = true }) => {
                       </Link>
                     </li>
                   ))}
+                  <li>
+                    <NavLink
+                      to="/blog"
+                      className="text-gray-200 hover:text-blue-500 px-3 py-2 transition"
+                    >
+                      {t('header.blog')}
+                    </NavLink>
+                  </li>
                 </ul>
               </nav>
 

@@ -6,4 +6,5 @@ export default {
   ourClients: 'Our Clients',
   team: 'Team',
   contact: 'Contact',
+  blog: 'Blog',
 };
