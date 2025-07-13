@@ -15,6 +15,7 @@ import CustomerBg07 from '@assets/images/pricing-illustration.svg';
 import CustomerImg08 from '@assets/images/pricing-illustration.svg';
 import CustomerBg08 from '@assets/images/pricing-illustration.svg';
 import Highlighter, { HighlighterItem02 } from '@ui/components/highlighter';
+import { Link } from 'react-router-dom';
 
 export const OurServices = () => {
   const items = [
@@ -84,8 +85,8 @@ export const OurServices = () => {
             {items.map((item, index) => (
               <div key={index} className="flex items-center justify-center">
                 <HighlighterItem02>
-  <a
-    href={item.link}
+  <Link
+    to={item.link}
     className=
       "relative block w-[352px] h-[198px] bg-gray-900 rounded-[inherit] overflow-hidden"
     
@@ -113,7 +114,7 @@ export const OurServices = () => {
         {item.name}
       </h2>
     </div>
-  </a>
+  </Link>
   
 </HighlighterItem02>
 
