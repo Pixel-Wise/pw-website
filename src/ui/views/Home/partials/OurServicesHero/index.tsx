@@ -1,4 +1,5 @@
 import { useTranslation, Trans } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import PixelWiseLogo from '@assets/images/SVG_ICON.svg';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { useEffect, useState } from 'react';
@@ -108,12 +109,12 @@ export const OurServicesHero = () => {
               data-aos-delay="400"
             >
               <div>
-                <a
+                <Link
+                  to="/cotizar"
                   className="btn text-white bg-gradient-to-t from-blue-600 to-blue-400 hover:to-blue-500 w-full shadow-lg group"
-                  href="#0"
                 >
                   {t('home.ourServices.actions.seeMore')}
-                </a>
+                </Link>
               </div>
             </div>
           </div>
