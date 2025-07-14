@@ -60,7 +60,7 @@ export const OurServicesHero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-theme">
       {/* Particles limited to Hero */}
       <div
         className="absolute top-0 left-0 w-full h-full -z-10 transition-opacity duration-300"
@@ -71,7 +71,7 @@ export const OurServicesHero = () => {
 
       {/* Gradient background */}
       <div
-        className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-800 to-gray-900 opacity-60 h-[10rem] pointer-events-none"
+        className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary-600 to-primary-500 opacity-60 h-[10rem] pointer-events-none"
         aria-hidden="true"
       />
 
@@ -93,11 +93,11 @@ export const OurServicesHero = () => {
             >
               <Trans
                 i18nKey="home.ourServices.title"
-                components={{ blue: <span className="text-blue-500" /> }}
+                components={{ blue: <span className="text-primary-200" /> }}
               />
             </h1>
             <p
-              className="text-xl text-gray-400 mb-10"
+              className="text-xl text-muted mb-10"
               data-aos="zoom-out"
               data-aos-delay="300"
             >
@@ -111,7 +111,7 @@ export const OurServicesHero = () => {
               <div>
                 <Link
                   to="/cotizar"
-                  className="btn text-white bg-gradient-to-t from-blue-600 to-blue-400 hover:to-blue-500 w-full shadow-lg group"
+                  className="btn text-white bg-gradient-to-t from-primary-600 to-primary-400 hover:to-primary-500 w-full shadow-lg group"
                 >
                   {t('home.ourServices.actions.seeMore')}
                 </Link>

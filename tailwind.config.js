@@ -10,7 +10,32 @@ module.exports = {
         'uncut-sans': ['var(--font-uncut-sans)', 'sans-serif'],
       },
       colors:{
-        // primary: '#008c9e',
+        primary: {
+          50: '#eef7ff',
+          100: '#cce6ff',
+          200: '#7db2ff',
+          300: '#cbe2ef',
+          400: '#21406d',
+          500: '#21406d',
+          600: '#1a3356',
+          700: '#142640',
+          800: '#0e1a2b',
+          900: '#070d15',
+        },
+        light: {
+          bg: '#ffffff',
+          surface: '#eef7ff',
+          accent: '#cce6ff',
+          text: '#21406d',
+          muted: '#7db2ff',
+        },
+        dark: {
+          bg: '#21406d',
+          surface: '#1a3356',
+          accent: '#7db2ff',
+          text: '#ffffff',
+          muted: '#cbe2ef',
+        },
       },
 
       fontSize: {
