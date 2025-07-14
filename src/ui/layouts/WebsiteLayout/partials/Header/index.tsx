@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { Link } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
 import SVG_ICON from '@assets/images/SVG_ICON.svg';
-import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 interface HeaderProps {
   nav?: boolean;
@@ -76,12 +76,12 @@ export const Header: React.FC<HeaderProps> = ({ nav = true }) => {
                   <FaInstagram size={18} />
                 </a>
                 <a
-                  href="https://youtube.com"
+                  href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-200 hover:text-red-600 transition"
+                  className="text-gray-200 hover:text-blue-500 transition"
                 >
-                  <FaYoutube size={18} />
+                  <FaLinkedinIn size={18} />
                 </a>
               </div>
             </div>
