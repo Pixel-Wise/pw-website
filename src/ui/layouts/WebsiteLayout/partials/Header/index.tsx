@@ -23,7 +23,7 @@ export const Header: React.FC<HeaderProps> = ({ nav = true }) => {
               alt="Logo PixelWise"
               className="h-30 w-30 mr-2"
             />
-            <h2 className="text-2xl font-black font-sans hover:text-primary-200 text-theme">
+            <h2 className="text-2xl font-black font-sans  hover:text-blue-400 text-gray-200">
               {import.meta.env.VITE_APP_NAME}
             </h2>
           </NavLink>
@@ -40,7 +40,7 @@ export const Header: React.FC<HeaderProps> = ({ nav = true }) => {
                       <Link
                         to={key}
                         smooth
-                        className="text-theme hover:text-primary-200 px-3 py-2 transition"
+                        className="text-gray-200 hover:text-blue-500 px-3 py-2 transition"
                       >
                         {t(`header.${key}`)}
                       </Link>
@@ -49,7 +49,7 @@ export const Header: React.FC<HeaderProps> = ({ nav = true }) => {
                   <li>
                     <NavLink
                       to="/blog"
-                      className="text-theme hover:text-primary-200 px-3 py-2 transition"
+                      className="text-gray-200 hover:text-blue-500 px-3 py-2 transition"
                     >
                       {t('header.blog')}
                     </NavLink>
@@ -63,7 +63,7 @@ export const Header: React.FC<HeaderProps> = ({ nav = true }) => {
                   href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-theme hover:text-primary-200 transition"
+                  className="text-gray-200 hover:text-blue-600 transition"
                 >
                   <FaFacebookF size={18} />
                 </a>
@@ -71,7 +71,7 @@ export const Header: React.FC<HeaderProps> = ({ nav = true }) => {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-theme hover:text-primary-200 transition"
+                  className="text-gray-200 hover:text-pink-500 transition"
                 >
                   <FaInstagram size={18} />
                 </a>
@@ -79,7 +79,7 @@ export const Header: React.FC<HeaderProps> = ({ nav = true }) => {
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-theme hover:text-primary-200 transition"
+                  className="text-gray-200 hover:text-blue-500 transition"
                 >
                   <FaLinkedinIn size={18} />
                 </a>
